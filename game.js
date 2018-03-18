@@ -11,6 +11,7 @@ var circles = [];
 var boxes = [];
 var boundaries = [];
 var texts = [];
+var width = 30;
 
 var ground;
 
@@ -25,10 +26,19 @@ function setup() {
     // boundaries.push(new Boundary(100, 100, width * 0.6, 20, 0.3));
     // boundaries.push(new Boundary(300, 300, width * 0.6, 20, -0.3));
     // boundaries.push(new Boundary(100, 500, width * 0.6, 20, 0.3));
-    // boundaries.push(new Boundary(300, 700, width * 0.6, 20, -0.3));
+    boundaries.push(new Boundary(100, 100, width * 0.6, 20, 0.3));
+
+    boundaries.push(new Boundary(500, 300, width * 0.6, 20, -0.3));
+    boundaries.push(new Boundary(100, 500, width * 0.6, 20, 0.3));
+
+    boundaries.push(new Boundary(500, 700, width * 0.6, 20, -0.3));
     boundaries.push(new Boundary(100, 900, width * 0.6, 20, 0.3));
     // bottom
-    boundaries.push(new Boundary(200, 1100, width, 20, 0));
+    boundaries.push(new Boundary(400, 1100, width, 20, 0));
+    //right
+    boundaries.push(new Boundary(800, 600, 30, 1000, 0));
+    //left
+    boundaries.push(new Boundary(0, 600, 30, 1200, 0));
 
 }
 
@@ -36,10 +46,6 @@ function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
 }
 
-// function keyPressed() {
-//   if (key == ' ') {
-//   }
-// }
 
 function mousePressed() {
 
