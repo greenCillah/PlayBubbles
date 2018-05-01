@@ -1,4 +1,5 @@
 // module aliases
+
 var Engine = Matter.Engine,
     // Render = Matter.Render,
     World = Matter.World,
@@ -6,12 +7,14 @@ var Engine = Matter.Engine,
 
 var engine;
 var world;
+
 var drawCircle = false;
 var circles = [];
 var boxes = [];
 var boundaries = [];
 var texts = [];
 var width = 30;
+var scoreBoard;
 
 var ground;
 
@@ -22,17 +25,19 @@ function setup() {
     world = engine.world;
     //Engine.run(engine);
 
-    texts.push(new Text(200, 100, 'wowser'));
-    // boundaries.push(new Boundary(100, 100, width * 0.6, 20, 0.3));
-    // boundaries.push(new Boundary(300, 300, width * 0.6, 20, -0.3));
-    // boundaries.push(new Boundary(100, 500, width * 0.6, 20, 0.3));
+    scoreBoard = new scoreBoard(0, 0);
+
+    //top left  diagonal
     boundaries.push(new Boundary(100, 100, width * 0.6, 20, 0.3));
-
+    //top right diagonal
     boundaries.push(new Boundary(500, 300, width * 0.6, 20, -0.3));
+    //middle left diagonal
     boundaries.push(new Boundary(100, 500, width * 0.6, 20, 0.3));
-
+    //middle right diagonal
     boundaries.push(new Boundary(500, 700, width * 0.6, 20, -0.3));
+    //bottom left diagonal
     boundaries.push(new Boundary(100, 900, width * 0.6, 20, 0.3));
+
     // bottom
     boundaries.push(new Boundary(400, 1100, width, 20, 0));
     //right
@@ -51,10 +56,12 @@ function mousePressed() {
 
     if (drawCircle) {
         circles.push(new Circle(mouseX, mouseY, random(5, 10)));
+        scoreBoard.addBall();
         drawCircle = false;
 
     } else {
         boxes.push(new Box(mouseX, mouseY, random(10, 40), random(10, 40)));
+        scoreBoard.addSquare();
         drawCircle = true;
 
     }
@@ -67,8 +74,11 @@ function mousePressed() {
 function draw() {
     background(51);
     Engine.update(engine);
-    for (var i = 0; i < circles.length; i++) {
-        circles[i].show();
+
+    var j, k;
+
+    for (j = 0; j < circles.length; j++) {
+        circles[j].show();
     }
     for (var i = 0; i < boxes.length; i++) {
         boxes[i].show();
@@ -79,6 +89,10 @@ function draw() {
 
     for (var i = 0; i < texts.length; i++) {
         texts[i].show();
+    }
+
+    if (j > 0) {
+        scoreBoard.show();
     }
 
 }
