@@ -19,6 +19,7 @@ function scoreBoard(ballCount, squareCount) {
         fill(0, 102, 153);
         text(this.squareText, this.x, this.y);
         text(this.ballText, this.x, this.y + this.gap);
+        text("Total: " + ballTotal + squareTotal, this.x, this.y + (this.gap * 2));
 
     }
 

@@ -91,8 +91,6 @@ function draw() {
         texts[i].show();
     }
 
-    if (j > 0) {
-        scoreBoard.show();
-    }
+    scoreBoard.show();
 
 }
