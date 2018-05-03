@@ -16,6 +16,7 @@ var texts = [];
 var width = 30;
 var scoreBoard;
 var debugEvents;
+var bubbles;
 
 var ground;
 
@@ -28,6 +29,7 @@ function setup() {
 
     scoreBoard = new scoreBoard(0, 0);
     debugEvents = new events();
+    bubbles = new Bubbles();
 
     //top left  diagonal
     boundaries.push(new Boundary(100, 100, 800, 20, 0.3));
@@ -56,17 +58,7 @@ function windowResized() {
 
 function mousePressed() {
 
-    if (drawCircle) {
-        circles.push(new Circle(mouseX, mouseY, random(5, 10)));
-        scoreBoard.addBall();
-        drawCircle = false;
-
-    } else {
-        boxes.push(new Box(mouseX, mouseY, random(10, 40), random(10, 40)));
-        scoreBoard.addSquare();
-        drawCircle = true;
-
-    }
+    bubbles.addBubble(mouseX, mouseY);
 
     debugEvents.addEvent(Math.round(mouseX) + " : " + Math.round(mouseY));
 
@@ -80,10 +72,6 @@ function draw() {
         circles[j].show();
     }
 
-    for (var i = 0; i < boxes.length; i++) {
-        boxes[i].show();
-    }
-
     for (var i = 0; i < boundaries.length; i++) {
         boundaries[i].show();
     }
@@ -92,6 +80,7 @@ function draw() {
         texts[i].show();
     }
 
+    bubbles.showAll();
     scoreBoard.show();
     debugEvents.show();
 
