@@ -68,7 +68,7 @@ function mousePressed() {
 
     }
 
-    debugEvents.addEvent(mouseX + ":" + mouseY);
+    debugEvents.addEvent(Math.round(mouseX) + " : " + Math.round(mouseY));
 
 }
 
