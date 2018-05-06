@@ -19,6 +19,7 @@ var debugEvents;
 var bubbles;
 
 var ground;
+var isBall = false;
 
 function setup() {
     var cnv = createCanvas(windowWidth, windowHeight);
@@ -27,9 +28,11 @@ function setup() {
     world = engine.world;
     //Engine.run(engine);
 
+
     scoreBoard = new scoreBoard(0, 0);
     debugEvents = new events();
     bubbles = new Bubbles();
+    balls = new Balls();
 
     //top left  diagonal
     boundaries.push(new Boundary(100, 100, 800, 20, 0.3));
@@ -51,6 +54,15 @@ function setup() {
 
 }
 
+function fn_isBall() {
+    if (isBall) {
+        isBall = false;
+    } else {
+        isBall = true;
+    }
+
+}
+
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
 }
@@ -58,7 +70,17 @@ function windowResized() {
 
 function mousePressed() {
 
-    bubbles.addBubble(mouseX, mouseY);
+
+    fn_isBall();
+    // need a menubutton here
+
+
+    if (isBall) {
+        balls.addBall(mouseX, mouseY);
+    } else {
+        bubbles.addBubble(mouseX, mouseY);
+    }
+
 
     debugEvents.addEvent(Math.round(mouseX) + " : " + Math.round(mouseY));
 
@@ -81,6 +103,7 @@ function draw() {
     }
 
     bubbles.showAll();
+    balls.showAll();
     scoreBoard.show();
     debugEvents.show();
 
