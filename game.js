@@ -1,7 +1,6 @@
 // module aliases
 
 var Engine = Matter.Engine,
-    // Render = Matter.Render,
     World = Matter.World,
     Bodies = Matter.Bodies;
 
@@ -17,6 +16,7 @@ var width = 30;
 var scoreBoard;
 var debugEvents;
 var bubbles;
+var menu;
 
 var ground;
 var isBall = false;
@@ -26,9 +26,9 @@ function setup() {
     cnv.style('display', 'block');
     engine = Engine.create();
     world = engine.world;
-    //Engine.run(engine);
 
 
+    menu = new Menu();
     scoreBoard = new scoreBoard(0, 0);
     debugEvents = new events();
     bubbles = new Bubbles();
@@ -105,6 +105,7 @@ function draw() {
     bubbles.showAll();
     balls.showAll();
     scoreBoard.show();
+    menu.show();
     debugEvents.show();
 
 }
