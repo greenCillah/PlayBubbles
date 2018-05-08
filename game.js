@@ -73,14 +73,16 @@ function mousePressed() {
 
     fn_isBall();
     // need a menubutton here
+    menu.clickHere(mouseX, mouseY);
 
 
-    if (isBall) {
-        balls.addBall(mouseX, mouseY);
-    } else {
-        bubbles.addBubble(mouseX, mouseY);
+    if (mouseX < 800) { // keep in the game zone
+        if (isBall) {
+            balls.addBall(mouseX, mouseY);
+        } else {
+            bubbles.addBubble(mouseX, mouseY);
+        }
     }
-
 
     debugEvents.addEvent(Math.round(mouseX) + " : " + Math.round(mouseY));
 

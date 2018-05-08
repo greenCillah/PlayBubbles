@@ -27,7 +27,13 @@ function Menu() {
 
     }
 
-    this.clickHere = function () {
+    this.clickHere = function (x, y) {
+
+        console.log(this.bubblesButton.x);
+
+        if (x > this.bubblesButton.x) {
+            console.log('fred');
+        }
 
 
     }
