@@ -24,6 +24,16 @@ function Balls() {
             var body = this.ballList[i];
             var pos = body.position;
             var angle = body.angle;
+
+            if (pos.y > 1060) {
+
+                Matter.Body.setPosition(body, {
+                    x: pos.x,
+                    y: 100
+                });
+
+            }
+
             push();
             translate(pos.x, pos.y);
             rotate(angle);

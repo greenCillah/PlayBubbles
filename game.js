@@ -48,7 +48,7 @@ function setup() {
     // bottom
     boundaries.push(new Boundary(400, 1100, width, 20, 0));
     //right
-    boundaries.push(new Boundary(800, 600, 30, 1000, 0));
+    boundaries.push(new Boundary(800, 500, 30, 1200, 0));
     //left
     boundaries.push(new Boundary(0, 600, 30, 1200, 0));
 
@@ -71,9 +71,9 @@ function windowResized() {
 function mousePressed() {
 
 
-    fn_isBall();
-    // need a menubutton here
-    menu.clickHere(mouseX, mouseY);
+    //    fn_isBall();
+    // If it isn't a bubble then it is a button
+    isBall = !menu.clickHere(mouseX, mouseY);
 
 
     if (mouseX < 800) { // keep in the game zone
