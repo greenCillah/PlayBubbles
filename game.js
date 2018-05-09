@@ -79,8 +79,11 @@ function mousePressed() {
     if (mouseX < 800) { // keep in the game zone
         if (isBall) {
             balls.addBall(mouseX, mouseY);
+            scoreBoard.addBall();
+
         } else {
             bubbles.addBubble(mouseX, mouseY);
+            scoreBoard.addSquare();
         }
     }
 
