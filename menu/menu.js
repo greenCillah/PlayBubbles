@@ -6,8 +6,11 @@ function Menu() {
     this.buttonGap = 5;
     this.bubblesButtonWidth = 70;
     this.bubblesButtonHeight = 50;
+    this.bubblesMenuWidth = 420;
+    this.bubblesMenuBarHeight = 50;
+
     this.bubblesButtonX = this.x + 5;
-    this.bubblesButtonY = this.y + 5;
+    this.bubblesButtonY = this.y + 75;
     this.bubblesColourOf = color(0, 204, 0);
     this.bubblesColourOn = color(255, 204, 0);
     this.bubblesIsOn = false;
@@ -20,13 +23,16 @@ function Menu() {
 
         // backGround
         fill(127, 63, 120);
-        rect(this.x - 10, this.y - 40, 420, 420);
+        rect(this.x, this.y, 420, 420);
+
+        fill(0, 9, 255);
+        rect(this.x, this.y, this.bubblesMenuWidth, this.bubblesMenuBarHeight);
 
         // Text
         this.menuText = "MENU";
         textSize(32);
         fill(0, 204, 0);
-        text(this.menuText, this.x + 5, this.y);
+        text(this.menuText, this.x + 30, this.y + 35);
 
         //Button
         if (this.bubblesIsOn) {

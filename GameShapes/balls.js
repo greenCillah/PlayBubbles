@@ -2,7 +2,7 @@ function Balls() {
 
     var options = {
         friction: 0,
-        restitution: 0.95
+        restitution: 1.1
     }
 
     this.r = 30;

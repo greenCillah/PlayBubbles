@@ -1,8 +1,8 @@
 function Bubbles() {
 
     var options = {
-        friction: 0.3,
-        restitution: 0.6
+        friction: 0,
+        restitution: 0.8
     }
 
     this.w = 30;
