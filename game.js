@@ -91,6 +91,11 @@ function mousePressed() {
 
 }
 
+function mouseDragged() {
+    debugEvents.addEvent(Math.round(mouseX) + " Drag " + Math.round(mouseY));
+    menu.drag(mouseX, mouseY);
+}
+
 function draw() {
     background(51);
     Engine.update(engine);

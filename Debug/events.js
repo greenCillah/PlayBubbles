@@ -14,7 +14,13 @@ function events() {
         var j = 0;
         for (var i = this.eventList.length - 1; i >= 0; i--) {
             text("[" + i + "] " + this.eventList[i], this.x, this.y + (this.gap * j));
+
             j++;
+
+            if (j > 100) { //for performance only show 100
+                return;
+            }
+
         }
 
     }
