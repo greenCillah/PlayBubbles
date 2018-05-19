@@ -28,7 +28,7 @@ function Balls() {
             if (pos.y > 1060) {
 
                 Matter.Body.setPosition(body, {
-                    x: pos.x,
+                    x: 100,
                     y: 100
                 });
 

@@ -3,8 +3,7 @@ function Level01() {
     this.boundryList = [];
 
 
-    this.boundryList.push(new Boundary(100, 200, 80, 20, 180));
-
+    this.boundryList.push(new Boundary(500, 200, 60, 20, radians(160)));
 
     //top left  diagonal
     this.boundryList.push(new Boundary(100, 100, 800, 20, 0.3));

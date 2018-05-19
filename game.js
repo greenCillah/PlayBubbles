@@ -8,7 +8,6 @@ var engine;
 var world;
 
 var boxes = [];
-var width = 30;
 var backGroundColour = 51;
 var scoreBoard;
 var debugEvents;
