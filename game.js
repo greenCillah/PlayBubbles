@@ -7,8 +7,6 @@ var Engine = Matter.Engine,
 var engine;
 var world;
 
-var drawCircle = false;
-var circles = [];
 var boxes = [];
 var boundaries = [];
 var texts = [];
@@ -33,9 +31,10 @@ function setup() {
     debugEvents = new events();
     bubbles = new Bubbles();
     balls = new Balls();
+    allBoundries = new Boundries();
 
     //top left  diagonal
-    boundaries.push(new Boundary(100, 100, 800, 20, 0.3));
+    /*  boundaries.push(new Boundary(100, 100, 800, 20, 0.3));
     //top right diagonal
     boundaries.push(new Boundary(500, 300, 800, 20, -0.3));
     //middle left diagonal
@@ -51,7 +50,7 @@ function setup() {
     boundaries.push(new Boundary(800, 500, 30, 1200, 0));
     //left
     boundaries.push(new Boundary(0, 600, 30, 1200, 0));
-
+*/
 }
 
 function fn_isBall() {
@@ -100,10 +99,6 @@ function draw() {
     background(51);
     Engine.update(engine);
 
-    for (var j = 0; j < circles.length; j++) {
-        circles[j].show();
-    }
-
     for (var i = 0; i < boundaries.length; i++) {
         boundaries[i].show();
     }
@@ -112,6 +107,7 @@ function draw() {
         texts[i].show();
     }
 
+    allBoundries.showAll();
     bubbles.showAll();
     balls.showAll();
     scoreBoard.show();
