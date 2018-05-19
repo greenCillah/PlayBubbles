@@ -2,9 +2,12 @@ function Level01() {
 
     this.boundryList = [];
 
+
+    this.boundryList.push(new Boundary(100, 200, 80, 20, 180));
+
+
     //top left  diagonal
     this.boundryList.push(new Boundary(100, 100, 800, 20, 0.3));
-
     //top right diagonal
     this.boundryList.push(new Boundary(500, 300, 800, 20, -0.3));
     //middle left diagonal
