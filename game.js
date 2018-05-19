@@ -8,15 +8,13 @@ var engine;
 var world;
 
 var boxes = [];
-var boundaries = [];
-var texts = [];
 var width = 30;
+var backGroundColour = 51;
 var scoreBoard;
 var debugEvents;
 var bubbles;
 var menu;
 
-var ground;
 var isBall = false;
 
 function setup() {
@@ -25,13 +23,13 @@ function setup() {
     engine = Engine.create();
     world = engine.world;
 
-
     menu = new Menu();
     scoreBoard = new scoreBoard(0, 0);
     debugEvents = new events();
     bubbles = new Bubbles();
     balls = new Balls();
     allBoundries = new Boundries();
+    level01 = new Level01();
 
 }
 
@@ -44,18 +42,11 @@ function fn_isBall() {
 
 }
 
-function windowResized() {
-    resizeCanvas(windowWidth, windowHeight);
-}
-
-
 function mousePressed() {
-
 
     //    fn_isBall();
     // If it isn't a bubble then it is a button
     isBall = !menu.clickHere(mouseX, mouseY);
-
 
     if (mouseX < 800) { // keep in the game zone
         if (isBall) {
@@ -78,19 +69,12 @@ function mouseDragged() {
 }
 
 function draw() {
-    background(51);
+    background(backGroundColour);
     Engine.update(engine);
-
-    for (var i = 0; i < boundaries.length; i++) {
-        boundaries[i].show();
-    }
-
-    for (var i = 0; i < texts.length; i++) {
-        texts[i].show();
-    }
 
     allBoundries.showAll();
     bubbles.showAll();
+    level01.showAll();
     balls.showAll();
     scoreBoard.show();
     menu.show();
