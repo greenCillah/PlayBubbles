@@ -33,24 +33,6 @@ function setup() {
     balls = new Balls();
     allBoundries = new Boundries();
 
-    //top left  diagonal
-    /*  boundaries.push(new Boundary(100, 100, 800, 20, 0.3));
-    //top right diagonal
-    boundaries.push(new Boundary(500, 300, 800, 20, -0.3));
-    //middle left diagonal
-    boundaries.push(new Boundary(100, 500, 800, 20, 0.3));
-    //middle right diagonal
-    boundaries.push(new Boundary(500, 700, 800, 20, -0.3));
-    //bottom left diagonal
-    boundaries.push(new Boundary(100, 900, 800, 20, 0.3));
-
-    // bottom
-    boundaries.push(new Boundary(400, 1100, width, 20, 0));
-    //right
-    boundaries.push(new Boundary(800, 500, 30, 1200, 0));
-    //left
-    boundaries.push(new Boundary(0, 600, 30, 1200, 0));
-*/
 }
 
 function fn_isBall() {
