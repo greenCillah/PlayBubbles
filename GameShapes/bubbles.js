@@ -2,7 +2,9 @@ function Bubbles() {
 
     var options = {
         friction: 0,
-        restitution: 0.8    
+        restitution: 0,
+        isStatic: true,
+        label: 'fred'
     }
 
     this.w = 30;

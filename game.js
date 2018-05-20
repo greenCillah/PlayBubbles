@@ -2,6 +2,7 @@
 
 var Engine = Matter.Engine,
     World = Matter.World,
+    Events = Matter.Events,
     Bodies = Matter.Bodies;
 
 var engine;
@@ -29,6 +30,20 @@ function setup() {
     balls = new Balls();
     allBoundries = new Boundries();
     level01 = new Level01();
+
+    Events.on(engine, 'collisionEnd', function (event) {
+        var pairs = event.pairs;
+
+        // change object colours to show those ending a collision
+        for (var i = 0; i < pairs.length; i++) {
+            var pair = pairs[i];
+
+            console.log(pair);
+
+            // pair.bodyA.render.fillStyle = '#222';
+            // pair.bodyB.render.fillStyle = '#222';
+        }
+    });
 
 }
 
