@@ -25,7 +25,6 @@ function Bubbles() {
             return;
         }
 
-        console.log("ssss" + BubbleId);
         this.popBubbleList.push(BubbleId);
 
     }
