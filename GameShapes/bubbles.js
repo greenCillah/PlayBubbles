@@ -10,11 +10,24 @@ function Bubbles() {
     this.w = 30;
     this.h = 30;
     this.bubbleList = [];
+    this.popBubbleList = [];
 
     this.addBubble = function (x, y) {
         var body = Bodies.rectangle(x, y, this.w, this.h, options);
         this.bubbleList.push(body);
         World.add(world, body);
+
+    }
+
+    this.popBubble = function (BubbleId) {
+
+        if (this.popBubbleList.includes(BubbleId)) {
+            return;
+        }
+
+        console.log("ssss" + BubbleId);
+        this.popBubbleList.push(BubbleId);
+
     }
 
 

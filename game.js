@@ -38,10 +38,10 @@ function setup() {
         for (var i = 0; i < pairs.length; i++) {
             var pair = pairs[i];
 
-            console.log(pair);
+            // going to pass in identifier
+            bubbles.popBubble(pair.bodyA.id);
+            bubbles.popBubble(pair.bodyB.id);
 
-            // pair.bodyA.render.fillStyle = '#222';
-            // pair.bodyB.render.fillStyle = '#222';
         }
     });
 
