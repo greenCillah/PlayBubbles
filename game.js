@@ -3,6 +3,7 @@
 var Engine = Matter.Engine,
     World = Matter.World,
     Events = Matter.Events,
+    Composite = Matter.Composite,
     Bodies = Matter.Bodies;
 
 var engine;
@@ -14,6 +15,7 @@ var scoreBoard;
 var debugEvents;
 var bubbles;
 var menu;
+var balls;
 var level01;
 var level02;
 
@@ -22,7 +24,9 @@ var isBall = false;
 function setup() {
     var cnv = createCanvas(windowWidth, windowHeight);
     cnv.style('display', 'block');
-    engine = Engine.create();
+    engine = Engine.create({
+        enableSleeping: true
+    });
     world = engine.world;
 
     menu = new Menu();
@@ -87,6 +91,7 @@ function mouseDragged() {
 }
 
 function draw() {
+
     background(backGroundColour);
     Engine.update(engine);
 
@@ -97,6 +102,8 @@ function draw() {
     scoreBoard.show();
     menu.show();
     debugEvents.show();
+
+
 
 }
 

@@ -29,16 +29,22 @@ function Bubbles() {
 
     }
 
-    this.isBubbleDueToBePoped = function (id) {
+    this.isBubbleDueToBePoped = function (BubbleId) {
 
-        return this.popBubbleList.includes(id);
+        return this.popBubbleList.includes(BubbleId);
 
     }
 
 
     this.showAll = function () {
 
+
+        // this needs to be sped up.
         for (var i = 0; i < this.bubbleList.length; i++) {
+
+            if (this.bubbleList[i] === undefined) {
+                continue;
+            }
 
             var body = this.bubbleList[i];
             var pos = body.position;
@@ -55,11 +61,15 @@ function Bubbles() {
 
             if (this.isBubbleDueToBePoped(body.id)) {
                 this.showPoppedBubble(pos.x, pos.y, angle);
+
+                Composite.remove(world, body)
+
+                this.bubbleList.splice(i, 1);
+
+
             } else {
                 this.showNormalBubble(pos.x, pos.y, angle);
             }
-
-
 
         }
 
@@ -79,6 +89,7 @@ function Bubbles() {
     }
 
     this.showNormalBubble = function (x, y, angle) {
+
         push();
         translate(x, y);
         rotate(angle);
