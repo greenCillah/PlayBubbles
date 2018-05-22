@@ -14,6 +14,8 @@ var scoreBoard;
 var debugEvents;
 var bubbles;
 var menu;
+var level01;
+var level02;
 
 var isBall = false;
 
@@ -29,7 +31,9 @@ function setup() {
     bubbles = new Bubbles();
     balls = new Balls();
     allBoundries = new Boundries();
-    level01 = new Level01();
+
+    gameLevel();
+
 
     Events.on(engine, 'collisionEnd', function (event) {
         var pairs = event.pairs;
@@ -88,10 +92,17 @@ function draw() {
 
     allBoundries.showAll();
     bubbles.showAll();
-    level01.showAll();
+    level02.showAll();
     balls.showAll();
     scoreBoard.show();
     menu.show();
     debugEvents.show();
+
+}
+
+function gameLevel() {
+
+    // level01 = new Level01();
+    level02 = new Level02();
 
 }
