@@ -29,6 +29,12 @@ function Bubbles() {
 
     }
 
+    this.isBubbleDueToBePoped = function (id) {
+
+        return this.popBubbleList.includes(id);
+
+    }
+
 
     this.showAll = function () {
 
@@ -47,18 +53,41 @@ function Bubbles() {
 
             }
 
-            push();
-            translate(pos.x, pos.y);
-            rotate(angle);
-            rectMode(CENTER);
-            strokeWeight(5);
-            stroke(255);
-            fill(127);
-            rect(0, 0, this.w, this.h);
-            pop();
+            if (this.isBubbleDueToBePoped(body.id)) {
+                this.showPoppedBubble(pos.x, pos.y, angle);
+            } else {
+                this.showNormalBubble(pos.x, pos.y, angle);
+            }
+
 
 
         }
+
+    }
+
+    this.showPoppedBubble = function (x, y, angle) {
+        push();
+        translate(x, y);
+        rotate(angle);
+        rectMode(CENTER);
+        strokeWeight(5);
+        stroke(224, 8, 77);
+        fill(224, 8, 77);
+        rect(0, 0, this.w, this.h);
+        pop();
+
+    }
+
+    this.showNormalBubble = function (x, y, angle) {
+        push();
+        translate(x, y);
+        rotate(angle);
+        rectMode(CENTER);
+        strokeWeight(5);
+        stroke(255);
+        fill(127);
+        rect(0, 0, this.w, this.h);
+        pop();
 
     }
 
