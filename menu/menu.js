@@ -30,8 +30,14 @@ function Menu() {
         fill(0, 9, 255);
         rect(this.x, this.y, this.bubblesMenuBarWidth, this.bubblesMenuBarHeight);
 
+
+
+
+
+
+
         // Text
-        this.menuText = "MENU";
+        this.menuText = "MENU    - FPS: " + Math.round(frameRate());
         textSize(32);
         fill(0, 204, 0);
         text(this.menuText, this.x + 30, this.y + 35);

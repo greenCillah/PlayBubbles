@@ -19,7 +19,6 @@ for (var i = 0; i < length; i++) {
 
 }
 
-
 document.body.innerHTML += "---------------------<br>";
 
 arr.forEach(function (element, index) {

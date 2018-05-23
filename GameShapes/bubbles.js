@@ -50,6 +50,8 @@ function Bubbles() {
             var pos = body.position;
             var angle = body.angle;
 
+
+
             if (pos.y > 1060) {
 
                 Matter.Body.setPosition(body, {
@@ -69,6 +71,7 @@ function Bubbles() {
 
             } else {
                 this.showNormalBubble(pos.x, pos.y, angle);
+
             }
 
         }
