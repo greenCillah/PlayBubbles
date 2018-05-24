@@ -5,6 +5,10 @@ function Level02() {
 
     this.boundryList.push(new Boundary(500, 200, 60, 20, radians(160)));
 
+    this.boundryList.push(new Boundary(500, 400, 60, 20, radians(160)));
+
+    this.boundryList.push(new Boundary(500, 600, 60, 20, radians(160)));
+
 
     for (var i = 0; i < 18; i++) {
         for (var j = 0; j < 20; j++) {

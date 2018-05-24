@@ -22,7 +22,7 @@ var level02;
 var isBall = false;
 
 function setup() {
-    var cnv = createCanvas(windowWidth, windowHeight);
+    var cnv = createCanvas(1600, 1200);
     cnv.style('display', 'block');
     engine = Engine.create({
         enableSleeping: true
@@ -91,6 +91,8 @@ function mouseDragged() {
 }
 
 function draw() {
+
+
 
     background(backGroundColour);
     Engine.update(engine);
