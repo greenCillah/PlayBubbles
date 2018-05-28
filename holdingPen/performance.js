@@ -39,10 +39,10 @@ function draw() {
 
     background(backGroundColour);
     Engine.update(engine);
+    push();
+    for (var i = 1; i <= 500; i++) {
 
-    for (var i = 1; i <= 1000; i++) {
 
-        push();
         translate(200, 200);
         rotate(1);
         rectMode(CENTER);
@@ -50,14 +50,15 @@ function draw() {
         stroke(224, 8, 77);
         fill(224, 8, 77);
         rect(0 + i, 0, 100, 100);
-        pop();
-    }
 
+    }
+    pop();
     push()
     var menuText = "MENU    - FPS: " + Math.round(frameRate());
-    textSize(32);
-    fill(0, 204, 0);
-    text(menuText, 200, 400);
+    console.log(menuText);
+    //     textSize(32);
+    //    fill(0, 204, 0);
+    //    text(menuText, 200, 400);
     pop();
 
 
